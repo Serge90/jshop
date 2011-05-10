@@ -1,0 +1,114 @@
+<table cellpadding="0" cellspacing="0" border="0">
+
+  <% if controller.controller_name == "products" %>
+<%= render 'shared/main_page_banners' %>
+  <% end %>
+
+<tr>
+<td id="products">
+<%
+  paginated_products = @searcher.products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+<% end %>
+ 
+<% if products.any? %>
+<table border="0" width="" cellspacing="0" cellpadding="0">
+<% cc=0 %>
+
+  <% products.each do |product| %>
+    <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+      <%= hook :products_list_item, {:product => product} do %>
+	<% if cc==0 %>
+	  <tr>
+	<% end %>
+      <td align="left"  style="width:1px;">
+	<table cellpadding="0" cellspacing="0" border="0" class="prod2_table">
+	  <tr>
+	    <td class="prod2_td">
+	      <table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td class="pic2_padd">
+ 		    <table cellpadding="0" cellspacing="0" border="0" align="center" class="wrapper_pic_table">
+		      <tr>
+			<td class="wrapper_pic_td">
+			  <%= link_to small_image(product), product %>
+			</td>
+		      </tr>
+		    </table> 
+  		  </td>
+		</tr>
+		<tr>
+	  	  <td class="name name2_padd">
+	    	    <%= link_to raw(product.name), product, :class => 'product_name' %>
+	  	  </td>
+		</tr>
+		<tr>
+	  	  <td class="price2_padd"><b>Our price:</b> 
+		    <span class="productSpecialPrice">
+		      <%= product_price(product) %>
+		    </span>
+	  	  </td>
+		</tr>
+		<tr>
+	  	  <td class="button2_padd button2_marg">
+		      <table cellpadding="0" cellspacing="0" border="0">
+			<tr>
+			  <td>
+                <span class="link2" style="white-space: nowrap;">
+                <%= link_to t("add_to_cart"), add_to_cart_path(:variant_id => product.master.id), :remote => true, :method => :put %>
+                &nbsp;</span>
+			  </td>
+			  <td>
+                <span class="link2">
+			    <%= link_to t("details"), product %>
+                </span>
+			  </td>
+			</tr>
+		      </table>
+	  	  </td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+	</td>
+    <%# should be smaller than 5,  but counting starts from 0 %>
+    <% if cc < 4 %>
+        <td class="prod_line_y padd_vv prod_line_y-part">
+          <img src="/images/spacer.gif" border="0" alt="" width="1" height="1">
+        </td>
+    <% end %>
+	<% cc=cc+1 %>
+	<% if cc==5 %>
+	  </tr>
+	<% end %>
+	<% if cc==5 %>
+	  <% cc=0 %>
+	<% end %>
+        <% end %>
+    <% end %>
+  <% end %>
+</table>
+<% end %>
+</td>
+</tr>
+<tr>
+<td>
+ 
+<% if paginated_products.respond_to?(:total_pages)
+      params.delete(:search)
+      params.delete(:taxon)
+      
+%><%= will_paginate(paginated_products,
+                    :previous_label => "&#171; #{t('previous')}",
+                    :next_label => "#{t('next')} &#187;") %>
+<% end %>
+
+</td>
+</tr>
+</table>

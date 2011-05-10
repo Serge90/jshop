@@ -1,0 +1,54 @@
+<table cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td>
+      <table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+      <td class="logo" align="left">
+	    <img src="/images/logo.gif" border="0" alt="" width="353" height="78">
+	  </td>
+	  <td class="navigation">
+	    <table cellpadding="0" cellspacing="0" border="0" align="right" class="table">
+              <tr>
+		<td class="z1">
+		  <table cellpadding="0" cellspacing="0" border="0" align="right">
+		    <tr>
+		      <td>
+			<b>Shopping Cart&nbsp;</b>  now in your cart:
+            <%= render :partial => 'orders/ajax_cart', :locals => {:order => current_order(true) } %>
+			<%# link_to_cart %>
+			</td>
+		      </tr>
+		    </table>
+		  </td>
+		</tr>
+	      <tr>
+		<td class="navigation2" align="right">	
+		  <%= render 'shared/leanguage_bar' %>
+		</td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+    <tr>
+      <td class="row_11">
+	<table cellpadding="0" cellspacing="0" border="0">
+	  <tr>
+	    <td class="menu" id="td_menu_bar">
+	      <table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <%= special_menu_creator %>
+		</tr>
+	      </table>
+	    </td>
+	  <td class="search">
+	    <%= render 'shared/search' %>
+	  </td>                
+        </tr>
+      </table>
+    </td>
+  </tr>
+    <%= render 'shared/alerts' %>
+</table>

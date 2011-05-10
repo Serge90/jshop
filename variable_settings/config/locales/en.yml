@@ -1,0 +1,9 @@
+en:
+  custom_setting: Custom setting
+  new_custom_setting: Create new
+  custom_settings: Custom settings
+  locales:
+    translations:
+      en: English
+      ru: Russian
+      et: Estonian

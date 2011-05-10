@@ -1,0 +1,47 @@
+<div id="content" class="with-sidebar  clear tile_bg">
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_custom_setting_link">
+      <%= button_link_to t("new_custom_setting"), new_object_url, {:icon => 'add', :id => 'admin_new_custom_setting'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= "#{t("actions.listing")} #{t("custom_setting")}" %></h1>
+
+<div id="new_custom_setting"></div>
+
+<table class="index" id='listing_custom_settings'>
+  <tr>
+    <%= hook :admin_custom_setting_index_headers do %>
+      <th>name</th><th>data</th>
+    <% end %>
+    <th>
+      <%= hook :admin_custom_setting_index_header_actions %>
+    </th>
+  </tr>
+<% @collection.each do |custom_setting| %>
+  <tr id="<%= dom_id custom_setting %>">
+    <%- locals = {:custom_setting => custom_setting} %>
+    <%= hook :admin_custom_settings_index_rows, locals do %>
+      <td><%= custom_setting.name %></td>
+      <td><%= custom_setting.value %></td>
+    <% end %>
+    <td class="actions">
+      <%= hook :admin_custom_settings_index_row_actions, locals do %>
+        <%= link_to_edit custom_setting, :class => 'edit' %>
+        &nbsp;
+        <%= link_to_delete custom_setting  %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate(:previous_label => "&#171; #{t('previous')}", :next_label => "#{t('next')} &#187;") %>
+
+<% content_for :sidebar do %>
+  <%= hook :admin_custom_settings_sidebar do %>
+  <% end %>
+<% end %>
+</div>

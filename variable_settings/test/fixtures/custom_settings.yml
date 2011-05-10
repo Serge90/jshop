@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  value: MyText
+  destroyable: false
+  scoping: MyText
+  from_value_type: MyText
+
+two:
+  name: MyString
+  value: MyText
+  destroyable: false
+  scoping: MyText
+  from_value_type: MyText

@@ -1,0 +1,20 @@
+<% unless @product_properties.empty? %>
+<table id="product-properties" class="table-display">
+<% for product_property in @product_properties %>
+      <tr>
+        <td <% if product_property.value != @product_properties.last.value %> class="prop_line" <% end %> >
+          <table>
+            <tr>
+              <td class="prop_name">
+                <%= product_property.property.presentation %>
+              </td>
+              <td class="prop_value">
+                <%= product_property.value %>
+              </td>
+            </tr>
+          </table>
+        </td>
+      <tr>
+<% end %>
+</table>
+<% end %>

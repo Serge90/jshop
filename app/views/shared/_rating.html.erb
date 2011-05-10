@@ -1,0 +1,15 @@
+<% stars = product.get_stars %>
+<div id="average_customer_rating">
+  <%= t('average_customer_rating') %>:&nbsp;
+  <span title="<%= txt_stars(stars[0]) %>">
+    <%= render :partial => "reviews/stars", :locals => {:stars => stars[0]} %>
+
+  </span>
+  (<%= t('based_upon') %> <%= t('review', :count => stars[1]) %>)
+</div>
+ <% if controller.controller_name!="reviews" %>
+  <span id="reviews_button_td" class="link2">
+    <%= link_to t('reviews'), :action=>"index", :controller => "reviews", :product_id => @product %>
+   &nbsp;&nbsp;
+  </span>
+ <% end %>

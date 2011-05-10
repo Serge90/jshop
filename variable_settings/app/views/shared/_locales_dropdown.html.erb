@@ -1,0 +1,20 @@
+<select onChange="changeLocale(this.value);" name="locales_dropdown" id="locales_dropdown">
+    <% get_locales.each do |locale| %>
+        <option title='/images/flags/<%= locale %>.png' <%= 'selected'.html_safe if session[:locale] == locale.to_sym %> value="<%= "/locale/set?locale=#{locale}" %>"><%=t "locales.translations.#{locale}" %></option>
+    <% end %>
+</select>
+
+<script language="javascript">
+
+    function changeLocale(arg) {
+        document.location = arg;
+    }
+
+    $(document).ready(function(e) {
+        try {
+            $("#locales_dropdown").msDropDown();
+        } catch(e) {
+            alert(e.message);
+        }
+    });
+</script> 

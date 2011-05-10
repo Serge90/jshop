@@ -1,0 +1,101 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  homepage: Homepage
+  whats_new: What's new?
+  specials: Specials
+  create_an_account: Create an account
+  contact_us: Contact Us
+  login: Login
+  log_in: Login
+  logout: Logout
+  write_review: Write Review
+  new_product_group: New product group
+  listing_product_groups: Listing product groups
+  previous: Previous
+  card_number: Card number
+  card_type_is: Card type is
+  unrecognized_card_type: Unrecognized card type
+  expiration: Expiration
+  card_code: Card Code
+  whats_this: What's this
+  confirm: Confirm
+  place_order: Place order
+  save_and_continue: Save and Continue
+  shipping_instructions: Shipping Instructions
+  order_total: Order total
+  checkout: Checkout
+  registration: Registration
+  email: E-mail
+  continue: Continue
+  total: Total
+  item: Item
+  price: Price
+  qty: Qty
+  shopping_cart: Shopping Cart
+  your_cart_is_empty: Your cart is empty
+  continue_shopping: Continue shopping
+  subtotal: Subtotal
+  update: Update
+  empty_cart: Empty cart
+  product_has_no_description: Product has no description
+  add_to_wishlist: Add to wishlist
+  variants: Variants
+  add_to_cart: Add to cart
+  out_of_stock: Out of stock
+  look_for_similar_items: Look for similar items
+  images_for: Images for
+  the_fine_print: The fine print
+  terms_text: Terms text
+  approved_text: Approved text
+  guideline_text: Guideline text
+  rating: Rating
+  review_title: Review title
+  review_content: Review content
+  submit_your_review: Submit your review
+  leave_us_a_review_for: Leave us a review for
+  submission_guidelines: Submission guidelines
+  terms_and_conditions: Terms and conditions
+  please_signin: Welcome, Please Sign In
+  new_customer: New Customer
+  returning_customer: Returning Customer
+  i_am: I am a new customer.
+  new_acc_creating: By creating an account at jshop you will be able to shop faster, be up to date on an orders status, and keep track of the orders you have previously made.
+  edit_wishlist: Edit Wishlist
+  wishlist_actions: Wishlist actions
+  item_view: Item view
+  item_description: Item description
+  availability: Availability
+  date_added: Date added
+  remove_from_wishlist: Remove from wishlist
+  move_to_another_wishlist: Move to another wishlist
+  your_wishlist_is_empty: Your wishlist is empty
+  create_new_wishlist: Create new wishlist
+  administration: administration
+  copyright: Copyright
+  privacy_notice: Privacy Notice
+  conditions_of_use: Conditions of Use
+  or: or
+  cancel: cancel
+  language: Language
+  currencies: Currencies
+  password: Password
+  remember_me: Remember me
+  forgotten: Password forgotten? Click here.
+  my_account: My account
+  details: Details
+  next: next
+  average_customer_rating: Average customer rating
+  based_upon: Based upon
+  review: Review
+  reviews: Reviews
+  submitted_on: Submitted on
+  write_your_own_review: Write your own review
+  back: back
+  shop_by_taxonomy: Shop by taxonomy
+
+
+
+

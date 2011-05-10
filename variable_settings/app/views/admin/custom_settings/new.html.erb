@@ -1,0 +1,10 @@
+<div id="content" class="with-sidebar  clear tile_bg">
+  <%= render "shared/error_messages", :target => @custom_setting %>
+  <h1>Create the product</h1>
+  <div id="new_product">
+    <%= form_for ["admin", @custom_setting] do |f| %>
+      <%= render :partial => 'form', :locals => {:f => f} %>
+      <%= render :partial => 'admin/shared/edit_resource_links' %>
+    <% end %>
+  <div>
+</div>

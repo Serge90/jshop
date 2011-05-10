@@ -1,0 +1,15 @@
+<div id="reviews">
+  <%= render :partial => 'shared/rating', :locals => {:product => @product, :review => 0} %>
+  <% for review in @product.reviews.approval_filter %>
+    <%= render :partial => 'shared/review', :locals => {:review => review} %>
+  <% end %>
+  <% if controller.controller_name=="reviews" %>
+      <span class="link2">
+    <%= link_to t('back'), @product %> &nbsp;&nbsp;&nbsp;
+      </span>
+  <% end %>
+  <span class="link2">
+  <%= link_to t('write_review'), new_product_review_path(@product) %>
+  </span>
+</div>
+

@@ -1,0 +1,38 @@
+<table border="0" class="box_width_left" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0"  class="infoBoxHeading2_table">
+  	<tr>
+	  <td class="infoBoxHeading2_td">Categories</td>
+  	</tr>
+      </table>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0"  class="infoBox_table">
+	<tr>
+	  <td class="infoBox_td">
+	    <table border="0" width="100%" cellspacing="0" cellpadding="0"  class="infoBoxContents_table">
+  	      <tr>
+	  	<td class="boxText">
+
+		<% get_taxonomies.each do |taxonomy| %>
+		  <ul class="categories">
+		    <li class="bg_list">
+		      <%= link_to t("shop_by_taxonomy", :taxonomy => taxonomy.name.singularize), seo_url(taxonomy.root), :class => 'root' %>
+		    </li>
+		    <% taxonomy.root.children.each do |taxon| %>
+		      <li class="bg_list">
+			<%= link_to taxon.name, seo_url(taxon) %>
+		      </li>
+		    <% end %>
+		  </ul>
+		<% end %>
+
+		</td>
+	      </tr>
+	    </table>
+	  </td>
+  	</tr>
+      </table>
+    </td>
+  </tr>
+</table>
+

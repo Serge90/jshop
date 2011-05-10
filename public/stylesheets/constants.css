@@ -1,0 +1,107 @@
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+FORM 						{display: inline;}
+img 						{border: 0px solid white;}
+td 							{vertical-align:top;}
+table						{width:100%;}
+object						{vertical-align:top;}
+.vam, .vam_td td			{vertical-align:middle;}
+.tac						{text-align:center;}
+.height_100					{height:100%;height:auto !important;min-height:100%;}
+.b_width strong			{display:block; width:125px; font-weight:normal;}
+a						{outline:none; text-decoration: none;}
+.search_in				{padding:5px 10px 1px 10px; vertical-align:middle;}
+.search_in	input		{vertical-align:middle; margin-right:10px;}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+.fs_lh								{font-size:0px; line-height:0px;}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+.fs_lh-38							{font-size:0px; line-height:0px;min-height: 38px; height: auto!important;}
+.fs_lh-100							{font-size:0px; line-height:0px;height: 100%;}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+CHECKBOX, INPUT, RADIO, SELECT 		{font-size: 11px; line-height:12px;font-family:Tahoma, Geneva, sans-serif;}	
+TEXTAREA 							{width: 100%;font-size:12px;font-family:Tahoma, Geneva, sans-serif;}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+.errorBox 					{ font-size : 10px; background: #ffb3b5; font-weight: bold; }
+.stockWarning 				{ font-size : 10px; color: #cc0033; padding:10px 0px 10px 0px;}
+/* ************************************************************************************* */
+TR.headerError 				{background: #ff0000;}
+TD.headerError 				{color: #ffffff;font-size: 12px;font-weight : bold; background: #ff0000;text-align:center;}
+TR.headerInfo 				{background: #00ff00;}
+TD.headerInfo 				{color: #ffffff;font-size: 12px;font-weight: bold;background: #00ff00;text-align: center;}
+
+TD.infoBoxHeading 			{color: #ffffff;font-size: 10px;font-weight: bold;background: #bbc3d3;}
+TD.infoBox, SPAN.infoBox 	{font-size: 10px;}
+/* ************************************************************************************* */
+TABLE.productListing 							{border: 1px;border-style: solid;border-color: #b6b7cb;border-spacing: 1px;}
+.productListing-heading 						{color: #FFFFFF;font-size: 10px;font-weight: bold;background: #b6b7cb;}
+TD.productListing-data 							{/* font-size: 10px; */ }
+TD.pageHeading, DIV.pageHeading 				{color: #9a9a9a; font-size: 20px;font-weight: bold;}
+TD.pageHeading a, DIV.pageHeading a 			{color: #9a9a9a; font-size: 20px;font-weight: bold; text-decoration:none;}
+TD.pageHeading a:hover, DIV.pageHeading a:hover {color: #9a9a9a; text-decoration:underline;}
+/* ************************************************************************************* */
+TD.fieldKey 						{font-size: 12px;font-weight: bold;}
+TD.fieldValue 						{font-size: 12px;}
+TD.tableHeading 					{font-size: 12px;font-weight: bold;}
+/* ************************************************************************************* */
+TABLE.formArea 						{background:#f1f9fe; border-color:#7b9ebd; border-style:solid; border-width:1px;}
+TD.formAreaTitle 					{font-size:12px;font-weight: bold;}
+SPAN.markProductOutOfStock 			{color: #c76170;font-size: 12px;font-weight: bold;}
+/* ************************************************************************************* */
+SPAN.errorText 						{color: #ff0000;}
+.checkoutBarFrom, .checkoutBarTo 	{color: #969494; font-size: 10px;}
+.checkoutBarCurrent 				{color: #bc2425;font-size: 10px;}
+/* message box */
+.messageBox 						{ font-size: 10px; }
+.messageStackError, 
+.messageStackWarning 				{ font-size: 10px; background-color: #ffb3b5;}
+.messageStackSuccess 				{ font-size: 10px; background-color: #99ff00; }
+/* input requirement */
+.inputRequirement 					{ font-size: 11px; color: #ff0000; vertical-align:top}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+.prod_info							{float:left;padding:3px 1px 1px 1px;margin:0px 45px 0px 0px; text-align:center;}
+
+.indent_2				{padding-left:12px;}
+.indent_3				{padding-bottom:3px;}
+
+*html .s_width_100		{width:100%;}
+
+.width2_100,
+.width3_100,
+.radio 					{width:100%;}
+.radio input			{margin:0px 5px 1px 5px; vertical-align:middle;}
+
+
+.width2_100 input		{width:55%;}
+.width2_100 select		{width:55%;}
+.width3_100 input		{width:100%;}
+/* ************************************************************************************* */
+.img_middle	img			{vertical-align:middle; margin:1px 10px 0px 0px;}
+.img_middle				{padding:3px 0px 3px 0px;}
+/* ************************************************************************************* */
+
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+.ofh								{overflow:hidden;}
+.al_left 							{padding-top:5px;}
+.al_left strong						{text-align:left !important;}
+.al_left 							{text-align:left !important;}
+.fl_left							{float:left;}
+.fl_right							{float:right;}
+.cl_both							{clear:both; line-height:0px; font-size:0px;}
+/* ************************************************************************************* */    
+.left_part				{float:left; width:75%}
+.right_part				{float:right;padding:0px 0px 0px 0px;}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+.reviews_write input	{vertical-align:middle;}
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+/* ************************************************************************************* */
+ol, ul { list-style: none; }
