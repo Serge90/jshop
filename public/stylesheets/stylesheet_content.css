@@ -385,7 +385,7 @@ text-align: left;
 #cart_form_td{
     padding-top: 5px;
 }
-.standart_link, .breadcrumbs {
+.standart_link, .standart_link a, .breadcrumbs, .progress-steps li span a {
 color:#817A7A;
 font-size:12px;
 font-weight:500;
@@ -405,6 +405,7 @@ font-weight:normal;
 text-decoration:none;
 }
 .submit_button, .move_button input, .feedback-review{
+    margin-top: 3px;
     background-color: #464545;
     color: #ffffff;
     font-weight: 600;
@@ -439,4 +440,9 @@ text-decoration:none;
     font-size:12px;
     font-weight:600;
     text-decoration:none;
+}
+.date_select select
+    {border:0px solid #cccccc;background:transparent; color:#a4a4a4;vertical-align:middle;margin:0px 0px 0px 0px;padding:0px 5px 2px 5px; height:16px; line-height:14px;}
+.even{
+    text-align: center;
 }
