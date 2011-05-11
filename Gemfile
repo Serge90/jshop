@@ -4,10 +4,11 @@ gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'spree_ajax_cart', :git => 'git://github.com/pogodan/spree_ajax_cart'
+
+gem 'spree_ajax_cart', :git => 'git://github.com/kritik/spree_ajax_cart'
 # gem "spree_locales_dropdown", :require => "spree_locales_dropdown", :git => 'git://github.com/greendog/spree_locales_dropdown.git'
 gem 'mysql2','< 0.3'
-gem 'spree', '0.50.2'
+gem 'spree', :git => 'git://github.com/spree/spree.git'
 gem "spree_static_content"
 gem "spree_editor", :git => "git://github.com/romul/spree_editor.git"
 gem "spree_wishlist", :git => "git://github.com/spree/spree_wishlist.git"
