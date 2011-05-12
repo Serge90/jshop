@@ -15,8 +15,8 @@
 
 		<% get_taxonomies.each do |taxonomy| %>
 		  <ul class="categories">
-		    <li class="bg_list2">
-		      <%= link_to t("shop_by_taxonomy", :taxonomy => taxonomy.name.singularize), seo_url(taxonomy.root), :class => 'root' %>
+		    <li class="bg_list">
+		      <b><%= link_to t("shop_by_taxonomy", :taxonomy => taxonomy.name.singularize), seo_url(taxonomy.root), :class => 'root' %><b>
 		    </li>
 		    <% taxonomy.root.children.each do |taxon| %>
 		      <li class="bg_list">
