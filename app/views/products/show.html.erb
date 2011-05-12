@@ -48,12 +48,18 @@
                         </b>
                   </td>
                   <td>
+
                   <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td id="cart_form_td">
                             <%= hook :cart_form do %>
                                 <%= render 'cart_form' %>
                             <% end %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="cart_form_td">
+                            <%= render :partial => "shared/social_sharing" %>
                         </td>
                     </tr>
                   </table>

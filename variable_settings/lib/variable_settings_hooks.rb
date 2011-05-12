@@ -8,6 +8,8 @@ class VariableSettingsHooks < Spree::ThemeSupport::HookListener
     %(
 <link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/dd.css"/>
 <%= javascript_include_tag 'jquery.dd.js' %>
+<script type="text/javascript" src="http://vkontakte.ru/js/api/share.js?11" charset="windows-1251"></script>
 )
   end
+  
 end
