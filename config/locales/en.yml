@@ -95,7 +95,7 @@ en:
   submitted_on: Submitted on
   write_your_own_review: Write your own review
   back: back
-  shop_by_taxonomy: Shop by taxonomy
+  shop_by_taxonomy: Shop by %{taxonomy}
   shipping_instructions: Shipping Instructions
   place_order: Place Order
 

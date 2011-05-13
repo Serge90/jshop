@@ -20,12 +20,13 @@ class Taxon < ActiveRecord::Base
   # this method should be customized to your own site
   def applicable_filters
     fs = []
-    # fs << ProductFilters.taxons_below(self)
+    #fs << ProductFilters.taxons_below(self)
     ## unless it's a root taxon? left open for demo purposes
 
     fs << ProductFilters.price_filter if ProductFilters.respond_to?(:price_filter)
     fs << ProductFilters.brand_filter if ProductFilters.respond_to?(:brand_filter)
     fs << ProductFilters.model_filter if ProductFilters.respond_to?(:model_filter)
+    fs += generate_filters
     fs
   end
 
@@ -43,6 +44,30 @@ class Taxon < ActiveRecord::Base
     scope = self.products.active
     scope = scope.on_hand unless Spree::Config[:show_zero_stock_products]
     scope
+  end
+  
+  def generate_filters
+    properties = {}
+    active_products.each do |product|
+      product.product_properties.each do |property|
+	if properties[property.property_id].nil?
+	  properties[property.property_id] = {
+	    :label => property.property_name,
+	    :scope => "#{property.property_name}_any",
+	    :name  => property.property_name,
+	    :conds => {property.value => "product_properties.value = '#{property.value}'"},
+	    :labels => [[property.value,property.value]]
+	  }
+	else
+	  unless properties[property.property_id][:labels].include?(property.value)
+	    properties[property.property_id][:labels] << [property.value,property.value]
+	    properties[property.property_id][:conds][property.value] = "product_properties.value = '#{property.value}'"
+	  end
+	end
+      end
+    end
+    p properties
+    properties.values
   end
 
   private
