@@ -25,8 +25,8 @@ class Taxon < ActiveRecord::Base
 
     fs << ProductFilters.price_filter if ProductFilters.respond_to?(:price_filter)
     fs << ProductFilters.brand_filter if ProductFilters.respond_to?(:brand_filter)
-    fs << ProductFilters.model_filter if ProductFilters.respond_to?(:model_filter)
-    fs += generate_filters
+    #fs << ProductFilters.model_filter if ProductFilters.respond_to?(:model_filter)
+    #fs += generate_filters
     fs
   end
 

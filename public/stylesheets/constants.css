@@ -63,7 +63,7 @@ SPAN.errorText 						{color: #ff0000;}
 .inputRequirement 					{ font-size: 11px; color: #ff0000; vertical-align:top}
 /* ************************************************************************************* */
 /* ************************************************************************************* */
-.prod_info							{float:left;padding:3px 1px 1px 1px;margin:0px 45px 0px 0px; text-align:center;}
+.prod_info							{float:left;padding:3px 1px 1px 1px; text-align:center;}
 
 .indent_2				{padding-left:12px;}
 .indent_3				{padding-bottom:3px;}

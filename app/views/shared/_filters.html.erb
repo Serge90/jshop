@@ -3,7 +3,6 @@
   <input type="hidden" name="per_page" value="<%= params[:per_page] %>"/>
 
   <% filters = @taxon ? @taxon.applicable_filters : [ProductFilters.all_taxons] %>
-
   <% filters.each do |filter| %>
     <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
     <% next if labels.empty? %>

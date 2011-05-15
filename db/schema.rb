@@ -441,6 +441,13 @@ ActiveRecord::Schema.define(:version => 20110507105149) do
   add_index "products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
   add_index "products_taxons", ["taxon_id"], :name => "index_products_taxons_on_taxon_id"
 
+  create_table "promoted_items", :force => true do |t|
+    t.string  "description"
+    t.integer "product_id"
+    t.date    "start"
+    t.date    "stop"
+  end
+
   create_table "promotion_rules", :force => true do |t|
     t.integer  "promotion_id"
     t.integer  "user_id"

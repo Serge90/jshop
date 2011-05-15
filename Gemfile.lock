@@ -15,11 +15,26 @@ GIT
       activerecord (>= 3.0.0)
 
 GIT
+  remote: git://github.com/kritik/spree-solr-search.git
+  revision: 86528273c9eeb43b1716d158632d6c5a3f771d4a
+  specs:
+    spree_solr_search (0.40.3)
+      acts_as_solr_reloaded (>= 1.6.0)
+      spree_core (>= 0.30.1)
+
+GIT
   remote: git://github.com/kritik/spree_ajax_cart
   revision: a21f99f8ab97d07562c5cd3624714a2d45c1ef24
   specs:
     spree_ajax_cart (1.0.0)
       spree_core (>= 0.40.0)
+
+GIT
+  remote: git://github.com/kritik/spree_store_credits.git
+  revision: f5185d50c92319ffcd3c3084e9a37cee6d247f72
+  specs:
+    spree_store_credits (1.0.1)
+      spree_core (>= 0.30.1)
 
 GIT
   remote: git://github.com/pronix/spree_webmoney.git
@@ -30,7 +45,7 @@ GIT
 
 GIT
   remote: git://github.com/romul/spree-reviews.git
-  revision: 4a7aa5066511d5d326e47faf7adaca2211087ec3
+  revision: 8bb248a2733fd330077772aa51de68b485de4986
   specs:
     spree_reviews (0.50.1)
       spree_core (>= 0.50.0)
@@ -51,7 +66,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: e75990dea23aac9b773f4a9626aa861ab94fee31
+  revision: ee24a240499910f75764846ee17ffd6c2d079578
   specs:
     spree (0.60.99)
       spree_api (= 0.60.99)
@@ -92,7 +107,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_i18n.git
-  revision: c72c4cc954e9569e11c25af00cb795522a1d733c
+  revision: b9135cc55efc2758e6ecb0a5dfa7e8aa566053c5
   specs:
     spree_i18n (1.0.0)
       spree_core (>= 0.30.0)
@@ -148,6 +163,7 @@ GEM
     activesupport (3.0.7)
     acts_as_commentable (3.0.0)
     acts_as_list (0.1.2)
+    acts_as_solr_reloaded (1.6.0)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     braintree (2.10.0)
@@ -257,7 +273,9 @@ DEPENDENCIES
   spree_reviews!
   spree_robokassa!
   spree_simple_product_translations
+  spree_solr_search!
   spree_static_content
+  spree_store_credits!
   spree_webmoney!
   spree_wishlist!
   variable_settings!
