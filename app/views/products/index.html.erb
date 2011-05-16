@@ -8,7 +8,7 @@
   <% end %>
 <% end %>
 
-<% if params[:keywords] %>
+<% if !params[:keywords].blank? %>
 
   <%= hook :search_results do %>
     <% if @products.empty? %>
