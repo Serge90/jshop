@@ -1,4 +1,5 @@
 config/database.yml
+config/solr.yml
 tmp/*
 log/*
 log/development.log

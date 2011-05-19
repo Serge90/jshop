@@ -1,15 +1,14 @@
   <% if flash[:warning] or flash[:notice] %>
-
-  <tr>
-    <td id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-      <%= flash[:warning] || flash[:notice]  %>
-    </td>
-  </tr>
+    <tr>
+      <td id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	<%= flash[:warning] || flash[:notice]  %>
+      </td>
+    </tr>
   <% end %>
-    <% if flash[:alert] %>
-  <tr>
-    <td id="alert" class="alert">
-      <%= flash[:alert]  %>
-    </td>
-  </tr>
+  <% if flash[:error] %>
+    <tr>
+      <td id="error" class="error">
+	<%= flash[:error]  %>
+      </td>
+    </tr>
   <% end %>

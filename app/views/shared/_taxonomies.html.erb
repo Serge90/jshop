@@ -15,8 +15,8 @@
 
 		<% get_taxonomies.each do |taxonomy| %>
 		  <ul class="categories">
-		    <li class="bg_list"><%= @taxon.name if @taxon %>
-		      <b><%= link_to t("shop_by_taxonomy", :taxonomy => taxonomy.name), seo_url(taxonomy.root), :class => 'root' %></b>
+		    <li class="bg_list">
+		      <b><%= link_to taxonomy.root.name, seo_url(taxonomy.root), :class => 'root' %></b>
 		    </li>
 		    <%= render :partial => 'shared/taxonomy', :object=> taxonomy.root %>
 		  </ul>

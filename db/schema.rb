@@ -173,6 +173,17 @@ ActiveRecord::Schema.define(:version => 20110507105149) do
     t.datetime "updated_at"
   end
 
+  create_table "inquiries", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "inquiry_type"
+    t.string   "order_no"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "phone_number"
+  end
+
   create_table "inventory_units", :force => true do |t|
     t.integer  "variant_id"
     t.integer  "order_id"

@@ -2,9 +2,9 @@ module ApplicationHelper
   # to create menu in the header
   def special_menu_creator
     links = {:homepage => root_path,
-             :whats_new => root_path,
+             :whats_new => news_index_path,
              :specials => "#",
-             :contact_us => "#"
+             :contact_us => contact_index_path
     }
     if session['warden.user.user.key'].nil?
       links["login"] = login_path
@@ -23,9 +23,9 @@ module ApplicationHelper
 
   def footer_menu_creator
     links = {:homepage => root_path,
-             :whats_new => root_path,
+             :whats_new => news_index_path,
              :specials => "#",
-             :contact_us => "#"
+             :contact_us => contact_index_path
     }
     if session['warden.user.user.key'].nil?
       links["login"] = login_path

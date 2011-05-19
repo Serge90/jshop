@@ -17,13 +17,14 @@ gem "spree_i18n", :git => "git://github.com/spree/spree_i18n.git"
 gem "spree_webmoney", :git => "git://github.com/pronix/spree_webmoney.git"
 gem "spree_comments"
 gem "acts_as_commentable"
-gem 'spree_blogging_spree', :git => 'git://github.com/divineforest/spree-blogging-spree.git'
-gem 'spree_simple_product_translations'
+gem 'spree_blogging_spree', :git => 'git://github.com/sbeam/spree-blogging-spree.git'
+gem 'spree_simple_product_translations', :git => 'git://github.com/jeroenj/spree-simple_product_translations.git'
 gem 'globalize3', :git => 'git://github.com/jeroenj/globalize3.git'
 gem 'spree_store_credits', :git => 'git://github.com/kritik/spree_store_credits.git' #,:path => '../spree_store_credits'#
 gem 'spree_robokassa', :git => 'git://github.com/romul/spree_robokassa.git'
 #gem "spree_address_book", :git => "git://github.com/romul/spree_address_book.git"
 gem 'spree_reviews', :git => "git://github.com/romul/spree-reviews.git"
+gem 'spree_contact_us', :git => 'git://github.com/kritik/spree-contact-us.git'#, :path => '../spree-contact-us'#
 gem 'spree_solr_search', :git => "git://github.com/kritik/spree-solr-search.git"#, :path => '../spree-solr-search'#
 
 # Use unicorn as the web server
