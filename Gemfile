@@ -19,7 +19,7 @@ gem "spree_comments"
 gem "acts_as_commentable"
 gem 'spree_blogging_spree', :git => 'git://github.com/sbeam/spree-blogging-spree.git'
 gem 'spree_simple_product_translations', :git => 'git://github.com/jeroenj/spree-simple_product_translations.git'
-gem 'globalize3', :git => 'git://github.com/jeroenj/globalize3.git'
+gem 'globalize3', :git => 'git://github.com/jeroenj/globalize3.git', :branch => 'fallbacks-master'
 gem 'spree_store_credits', :git => 'git://github.com/kritik/spree_store_credits.git' #,:path => '../spree_store_credits'#
 gem 'spree_robokassa', :git => 'git://github.com/romul/spree_robokassa.git'
 #gem "spree_address_book", :git => "git://github.com/romul/spree_address_book.git"
