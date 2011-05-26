@@ -7,3 +7,4 @@ log/development.log
 *.log
 solr/*
 Gemfile.lock
+public/stylesheets/all.css

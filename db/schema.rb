@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110507105149) do
+ActiveRecord::Schema.define(:version => 20110526084212) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -148,6 +148,21 @@ ActiveRecord::Schema.define(:version => 20110507105149) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "feedback_reviews", :force => true do |t|
     t.integer  "user_id"
@@ -371,6 +386,15 @@ ActiveRecord::Schema.define(:version => 20110507105149) do
   create_table "product_groups_products", :id => false, :force => true do |t|
     t.integer "product_id"
     t.integer "product_group_id"
+  end
+
+  create_table "product_imports", :force => true do |t|
+    t.string   "data_file_file_name"
+    t.string   "data_file_content_type"
+    t.integer  "data_file_file_size"
+    t.datetime "data_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "product_option_types", :force => true do |t|
@@ -766,6 +790,7 @@ ActiveRecord::Schema.define(:version => 20110507105149) do
     t.integer  "count_on_hand",                               :default => 0,     :null => false
     t.decimal  "cost_price",    :precision => 8, :scale => 2
     t.integer  "position"
+    t.string   "bare_core"
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"

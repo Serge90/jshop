@@ -42,7 +42,7 @@ module ApplicationHelper
   
   #loads locales for language module
   def get_locales
-    fall_back = [:en].to_yaml
+    fall_back = [:ru].to_yaml
     locales = CustomSetting.find_or_create_by_name("languages").value || fall_back
     begin
       locales = YAML::load(locales)

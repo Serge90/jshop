@@ -8,11 +8,11 @@ gem 'rails', '3.0.7'
 gem 'spree_ajax_cart', :git => 'git://github.com/kritik/spree_ajax_cart'
 # gem "spree_locales_dropdown", :require => "spree_locales_dropdown", :git => 'git://github.com/greendog/spree_locales_dropdown.git'
 gem 'mysql2','< 0.3'
-gem 'spree', :git => 'git://github.com/spree/spree.git'
+gem 'spree'#, :git => 'git://github.com/spree/spree.git'
 gem "spree_static_content"
 gem "spree_editor", :git => "git://github.com/romul/spree_editor.git"
 gem "spree_wishlist", :git => "git://github.com/spree/spree_wishlist.git"
-gem "spree_email_to_friend"
+gem "spree_email_to_friend", :git => 'git://github.com/kritik/spree_email_to_friend.git'
 gem "spree_i18n", :git => "git://github.com/spree/spree_i18n.git"
 gem "spree_webmoney", :git => "git://github.com/pronix/spree_webmoney.git"
 gem "spree_comments"
@@ -26,6 +26,9 @@ gem 'spree_robokassa', :git => 'git://github.com/romul/spree_robokassa.git'
 gem 'spree_reviews', :git => "git://github.com/romul/spree-reviews.git"
 gem 'spree_contact_us', :git => 'git://github.com/kritik/spree-contact-us.git'#, :path => '../spree-contact-us'#
 gem 'spree_solr_search', :git => "git://github.com/kritik/spree-solr-search.git"#, :path => '../spree-solr-search'#
+gem 'import_products', :git => 'git://github.com/joshmcarthur/spree-import-products.git'
+gem 'delayed_job'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
