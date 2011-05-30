@@ -790,7 +790,7 @@ ActiveRecord::Schema.define(:version => 20110526084212) do
     t.integer  "count_on_hand",                               :default => 0,     :null => false
     t.decimal  "cost_price",    :precision => 8, :scale => 2
     t.integer  "position"
-    t.string   "bare_core"
+    t.string   "barcode"
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"

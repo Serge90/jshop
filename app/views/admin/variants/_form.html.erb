@@ -25,8 +25,8 @@
     <p><%= f.label :cost_price, t("cost_price") %>:<br />
     <%= f.text_field :cost_price, :value => number_with_precision(@variant.cost_price, :precision => 2) %></p>
 
-    <p><%= f.label :bare_code, t("bare_code") %>:<br />
-    <%= f.text_field :bare_code %></p>
+    <p><%= f.label :barcode, t("barcode") %>:<br />
+    <%= f.text_field :barcode %></p>
 
     <% if Spree::Config[:track_inventory_levels] %>
       <p><%= f.label :on_hand, t("on_hand") %>: <br />

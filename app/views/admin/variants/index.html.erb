@@ -11,7 +11,7 @@
       <th><%= t("activerecord.attributes.variant." + field[:name].downcase, :default => field[:name].titleize) %></th>
     <% end %>
     <th><%= t("on_hand") %></th>
-    <th><%= t("bare_code") %></th>
+    <th><%= t("barcode") %></th>
     <th><%= t("action") %></th>
   </tr>
   <% @variants.each do |variant| %>
@@ -25,7 +25,7 @@
         <td><%= variant[field[:name].gsub(" ", "_").downcase] %></td>
       <% end %>
       <td><%= variant.on_hand %></td>
-      <td><%= variant.bare_code %></td>
+      <td><%= variant.barcode %></td>
       <td valign="top">
         <%= link_to_edit(variant) unless variant.deleted? %>
         &nbsp;

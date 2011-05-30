@@ -8,3 +8,8 @@ log/development.log
 solr/*
 Gemfile.lock
 public/stylesheets/all.css
+.redcar/*
+public/.~lock.import.csv#
+public/export.csv
+public/import.csv
+
