@@ -25,7 +25,7 @@ gem 'spree_robokassa', :git => 'git://github.com/romul/spree_robokassa.git'
 #gem "spree_address_book", :git => "git://github.com/romul/spree_address_book.git"
 gem 'spree_reviews', :git => "git://github.com/romul/spree-reviews.git"
 gem 'spree_contact_us', :git => 'git://github.com/kritik/spree-contact-us.git'#, :path => '../spree-contact-us'#
-gem 'spree_solr_search', :path => '../spree-solr-search'#, :git => "git://github.com/kritik/spree-solr-search.git"#
+gem 'spree_solr_search', :git => "git://github.com/kritik/spree-solr-search.git"#, :path => '../spree-solr-search'#
 gem 'import_products', :git => 'git://github.com/joshmcarthur/spree-import-products.git'
 gem 'delayed_job'
 
