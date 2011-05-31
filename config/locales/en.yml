@@ -100,6 +100,26 @@ en:
   shipping_instructions: Shipping Instructions
   place_order: Place Order
 
-
-
-
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "rub"
+  
+  en: En
+  nl-BE: "nl-BE"
+  en-AU: "en-AU"
+  pt-BR: pt-BR
+  nl-NL: nl-NL
+  pl: Pl
+  ru: Ru
+  de-CH: de-CH
+  en-GB: en-GB
+  fr-FR: fr-FR
+  es-ES: es-ES
+  ru-RU: ru-RU
+  de: De
+  es: Es
+  vn: Vn
+  lv: Lv
+  mx: Mx

@@ -28,8 +28,10 @@ namespace :products do
 
   desc "Imports the products from file public/import.csv"
   task :import => :environment do
+    I18n.locale = :en
     # TODO: put default values
     p "TODO: put default values"
+    p "TODO: uncomment taxon's search"
     tax_category_id = nil
     shipping_category_id = nil
 
@@ -60,6 +62,7 @@ namespace :products do
 	product.tax_category_id = tax_category_id
 	product.shipping_category_id = shipping_category_id
       end
+      product.save!
       
       # creating options and values
       options = row['options'].split(',').map{|el| el.strip}
@@ -110,13 +113,16 @@ namespace :products do
       end
       row['taxons'].split(',').each do |taxon|
 	#checking 
-        o_taxon = Taxon.where(:name => taxon.strip, :taxonomy_id => taxonomy.id)
+        o_taxon = Taxon.where(:name => taxon.strip, :taxonomy_id => taxonomy.id)#, :parent_id => taxonomy.taxons.first.id)
 	o_taxon = o_taxon.first
-	p o_taxon
         unless o_taxon
-          o_taxon = Taxon.new(:name=>taxon.strip, :taxonomy_id => taxonomy.id)
+          o_taxon = Taxon.new(:name=>taxon.strip, :taxonomy_id => taxonomy.id, :parent_id => taxonomy.taxons.first.id)
           o_taxon.save!
         end
+	if o_taxon
+	  o_taxon.parent_id = taxonomy.taxons.first.id
+	  o_taxon.save
+	end
         product.taxons += [o_taxon] unless product.taxon_ids.include?(o_taxon.id)
       end
 
