@@ -7,6 +7,10 @@
       $(this).parents('form').submit();
       e.preventDefault();
     });
+    $('#globalHelpLink, #close_helpPopout').click(function(){
+      $('#helpPopout').toggle();
+      return false;
+    });
 
   });
 })(jQuery);

@@ -1,5 +1,9 @@
 ru:
-  wishlist: List zhelanij
+  wishlist: Лист желаний
+  wishlists: Списки желаний
+  remove_from_wishlist: Удалить
+  move_to_another_wishlist: Перенести
+  move: Перенести
   number:
     format:
       separator: "."
