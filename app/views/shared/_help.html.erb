@@ -1,14 +1,17 @@
 <div class="zpopover bottom" id="helpPopout" style="top: 49px; left: 791px;display:none;">
   <div class="app">
     <div id="helpDrawer">
-      <h2>Talk To Us</h2>
+      <h2><%=t 'help.popup.title' %></h2>
       <a href="#" class="close" id="close_helpPopout">close</a>
-      <h3>We have answers right now!</h3>
+      <h3><%=t 'help.popup.sub_title' %></h3>
       <ul>
-	<li id="hwLivechat"><a class="gae-click*Product-Page*Help*Online-Chat" href="/liveChat.zml" id="chatLaunch"><em>Live Help</em><span class="hwText">Chat Online Live</span></a></li>
-	<li id="hwPhone"><em>Wanna Call?</em><span class="c2c">(800) 927-7671 24/7!</span></li>
-	<li id="hwEmail"><a target="_blank" href="/contact" class="gae-click*Product-Page*Help*Send-Email" id="emailz"><em>Not A Fan Of The Phone?</em><span class="hwText">Send Us An Email</span></a></li>
-	<li id="hwFaq"><a target="_blank" href="/general-questions" class="gae-click*Product-Page*Help*View-FAQs"><em>Need Answers?</em><span class="hwText">Check Out Our FAQs Page</span></a></li>
+	<li id="hwLivechat"><a class="gae-click*Product-Page*Help*Online-Chat" href="/liveChat.zml" id="chatLaunch"><em><%=t 'help.popup.live' %></em><span class="hwText">Chat Online Live</span></a></li>
+	<li id="hwPhone"><em><%=t 'help.popup.call' %></em><span class="c2c">(800) 927-7671 24/7!</span></li>
+	<li id="hwEmail">
+	  <%= link_to "<em>#{t 'help.popup.email'}</em>".html_safe, contact_index_path %>
+	  <span class="hwText"><%= link_to t('help.popup.sub_email'), contact_index_path %></span>
+	</li>
+	<li id="hwFaq"><a target="_blank" href="/general-questions" class="gae-click*Product-Page*Help*View-FAQs"><em><%=t 'help.popup.more' %></em><span class="hwText"><%=t 'help.popup.read_more' %></span></a></li>
       </ul>
     </div>
   </div>

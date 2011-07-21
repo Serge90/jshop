@@ -562,6 +562,25 @@ ActiveRecord::Schema.define(:version => 20110526084212) do
     t.datetime "updated_at"
   end
 
+  create_table "relation_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "applies_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relations", :force => true do |t|
+    t.integer  "relation_type_id"
+    t.integer  "relatable_id"
+    t.string   "relatable_type"
+    t.integer  "related_to_id"
+    t.string   "related_to_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "discount_amount",  :precision => 8, :scale => 2, :default => 0.0
+  end
+
   create_table "return_authorizations", :force => true do |t|
     t.string   "number"
     t.decimal  "amount",     :precision => 8, :scale => 2, :default => 0.0, :null => false

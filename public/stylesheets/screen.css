@@ -1,3 +1,14 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
 *:focus { outline: 0; }
 body {
   line-height: 1em;
@@ -5,7 +16,16 @@ body {
   background: #ffffff;
 }
 ol, ul { list-style: none; }
-
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
 q, blockquote { quotes: "" ""; }
 q:before { content: ""; }
 q:after { content: ""; }
@@ -33,6 +53,33 @@ hr.space {
   border: none;
   background: #ffffff;
   color: #ffffff;
+}
+body {
+  line-height: 1.5;
+  font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+  color: #333333;
+  font-size: 75%;
+}
+h1 {
+  font-weight: normal;
+  color: #222222;
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+h1 img { margin: 0; }
+h2 {
+  font-weight: normal;
+  color: #222222;
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+h3 {
+  font-weight: normal;
+  color: #222222;
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
 }
 h4 {
   font-weight: normal;
@@ -115,9 +162,13 @@ ol {
 dl { margin: 0 0 1.5em 0; }
 dl dt { font-weight: bold; }
 dd { margin-left: 1.5em; }
-
+table {
+  margin-bottom: 1.4em;
+  width: 100%;
+}
 th { font-weight: bold; }
 thead th { background: #c3d9ff; }
+th, td, caption { padding: 4px 10px 4px 5px; }
 tr.even td { background: #e5ecf9; }
 tfoot { font-style: italic; }
 caption { background: #eeeeee; }
@@ -863,58 +914,3 @@ div#checkout #checkout-summary {
   padding: 20px;
   width: 180px;
 }
-
-
-#globalActions li{padding:5px 10px; color:#fff; text-decoration:none; font-weight:bold; font:bold .8333em Verdana, helvetica, sans-serif; border-width:0 1px; border-style:solid; border-color:#15416f #15416f #3b6692 #3b6692;}
-#globalActions li{padding:5px 10px; color:#fff; text-decoration:none; font-weight:bold; font:bold .8333em Verdana, helvetica, sans-serif; border-width:0 1px; border-style:solid; border-color:#15416f #15416f #3b6692 #3b6692;}
-/* =GLOBAL HEADER */
-#globalActionsWrap {width:100%; background:#254e7b 0 -133px; border-bottom:1px solid #14457b; float:left;}
-#globalActions {position:relative; text-align:left; color:#fff; font-size:.75em; font-weight:bold; line-height:3em; text-indent:0;text-decoration:none;}
-#globalActions strong, #livechat {font-size:1.11em; margin-right:5px;}
-#globalActions ul {position:absolute; list-style:none; top:0; right:0; border-width:0 1px; border-style:solid; border-color:#15416f #3b6692 #3b6692 #15416f;margin:0; padding:0;}
-#globalActions li {float:left; text-indent:0; margin:0; padding:0; font-size:1.111em;}
-#globalActions a {color:#fff;}
-#globalActions ul a, #globalActions li.login-register a {display:block; padding:7px 11px;    text-decoration: none;}
-#globalActions #loginLinks, #globalActions li.first {padding:4px 11px;}
-#globalActions #loginLinks a, #globalActions .first a {display:inline; padding:0px;}
-#globalActions li.login-register {padding:0;}
-#globalActions .hiring {background-position:left -972px; display:block; height:42px; position:absolute; right:-50px; text-indent:-9999px; top:0; width:50px;}
-#livechat a {background:none 0 -50px no-repeat; border-left:1px solid #15416f; border-right:1px solid #15416f; padding:7px 9px 7px 40px;text-decoration:none;}
-#csBanner {float:left; position:relative; width:auto; height:12px; font-size:.9em; font-weight:bold; color:white;}
-#csBanner strong {padding-right:5px; font-size:1.111em;}
-#actions {float:right; color:#555;}
-#actions li {float:left; margin:0 0 0 10px; padding:0 0 0 11px; list-style:none; background-position:-192px 2px;}
-#actions .help {background:none !important; border-left:1px solid #369;}
-#actions .first {background:none !important;}
-#actions a {color:white;}
-#globalActionsWrap .fixedWidth {margin:0 auto; width:1044px;} /* Add this class to any nested element that needs to be 940px wide and centered */
-
-/*HELP POPUP*/
-#helpPopout {position:fixed; width: 400px; z-index:40000;} 
-#helpDrawer {background-color: #fff; border: 1px solid #e8e8e8; line-height: normal; padding: 20px 40px 0 20px; text-align:left; -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius:4px; border-radius:4px; }
-#helpDrawer h2, #helpDrawer h3 {font-family:georgia, serif; text-align: center;}
-#helpDrawer h2 {width: 90%; text-transform:uppercase; color:rgb(0,75,108); padding-left: 20px; font-size: 28px; margin-bottom: 0;}      
-#helpDrawer h3 {color:rgb(156,148,62); float:none; font-size: 16px;}
-#helpDrawer .close {text-indent: -9999px; display: block; font-size: 10pt; width: 20px; height: 20px; outline:none; padding: 2px; float: right; margin-top: -30px;}
-#helpDrawer ul {list-style-type:none; margin-top:30px; margin-bottom:30px; }
-#helpDrawer ul li {margin-bottom:20px; font-size:12px;  height: 42px;}
-#helpDrawer ul li#hwPhone, span.hwText {padding-left:60px;}
-#helpDrawer ul li a {color: rgb(0,75,108);}
-#helpDrawer ul li span, #helpDrawer ul li em {font-style: normal; display: block;}
-#helpDrawer ul li em {font-weight: bold; color: #404040; padding-left:60px;}
-#helpDrawer ul li#hwPhone em {padding-left:0;}
- 
-#helpDrawer ul li, #helpDrawer .close, a#helplink, #hwLivechatOffline div + span {background: transparent url(/images/spHelpPop.png) no-repeat top left;}
-#helpDrawer ul li#hwLivechat {background-position: 0 -26px; position: relative; z-index:22000; }
-#helpDrawer ul li#hwLivechatOffline {background-position:0 -30px; color:rgb(0,75,108); font-weight: bold; position: relative; z-index:25000; }
-#helpDrawer ul li#hwLivechatOffline div span {font-weight: bold; font-style: italic; font-size: 1.2em; text-align: right; padding-right: 34px;}
-#helpDrawer ul li#hwLivechatOffline div em {font-weight: bold; font-style: italic; color:rgb(0,75,108); clear: both;}
-#helpDrawer ul li#hwLivechatOffline div {background-color: rgba(255,255,255,0.7); border:none; font-family:georgia, serif; line-height:normal; height:60px; padding:0; width: 325px; position:absolute; text-align: right; top:0;}
-#helpDrawer ul li#hwPhone {background-position: 5px -74px;}
-#helpDrawer ul li#hwEmail {background-position: 1px -122px;}
-#helpDrawer ul li#hwFaq {background-position: 7px -160px;}
-#hwLivechatOffline div + span {background-position: right bottom; height:45px; position: absolute; right: -10px; width:69px;}
-
-a#helplink {background-position: 0 -194px; text-indent: -9999px; outline:none; position: fixed; top: 352px; left:2999px; width: 35px; height: 147px; display: block; margin: 0; zoom: 1;} 
-a#helplink span {display: block; background: transparent url(/images/helpwidgetcue.png) no-repeat; position: relative; width: 1px; height: 150px; margin-top: -16px; padding: 0; zoom: 1;}
- 

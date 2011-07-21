@@ -4,6 +4,62 @@ ru:
   remove_from_wishlist: Удалить
   move_to_another_wishlist: Перенести
   move: Перенести
+  save: Сохранить
+  write_review: Написать отзыв
+  leave_us_a_review_for: Оставить отзыв на
+  homepage: Дом. страница
+  whats_new: Новинки
+  specials: Избранное
+  contact_us: Напишите нам
+  language: Язык
+  add_to_wishlist: Добавить в Избранное
+  share: Поделиться
+  send_inquiry: Послать запрос
+  
+  custom_settings: Ручные настройки
+  custom_setting: Ручная настройка
+  new_custom_setting: Новая настройка
+  inquiries: Письма
+
+
+  locales:
+    translations:
+      ru: Русский
+      en: Англиский
+      et: Эстонский
+  email_to_friend:
+    send_to_friend: Отправить другу
+  
+  help:
+    popup:
+      title: "Возникли вопросы?"
+      sub_title: "Мы всегда готовы помочь вам!"
+      live: "Живое общение"
+      call: "Позвоните нам!"
+      email: "Напишите нам письмо!"
+      sub_email: "Написать"
+      more: "Есть вопросы?"
+      read_more: "Проверьте наш раздел с популярными вопросами"
+
+
+  en: En
+  nl-BE: "nl-BE"
+  en-AU: "en-AU"
+  pt-BR: pt-BR
+  nl-NL: nl-NL
+  pl: Pl
+  ru: Ru
+  de-CH: de-CH
+  en-GB: en-GB
+  fr-FR: fr-FR
+  es-ES: es-ES
+  ru-RU: ru-RU
+  de: De
+  es: Es
+  vn: Vn
+  lv: Lv
+  mx: Mx
+
   number:
     format:
       separator: "."
