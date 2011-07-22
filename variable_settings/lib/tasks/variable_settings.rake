@@ -37,6 +37,7 @@ namespace :products do
 
     require 'csv'
     CSV.read(File.join(Rails.root, 'public', 'import.csv'), {:headers => :first_row, :col_sep => ","}).each do |row|
+      I18n.locale = :en
       if row["id"]
 	product = Product.find(row["id"])
       else
@@ -55,8 +56,8 @@ namespace :products do
 
       #if no variant yet, we should set master price to product
       unless variant
-	product.price = row["price"]
-	product.cost_price = row["cost_price"]
+	product.price = row["price"].to_s.gsub(",","").to_f
+	product.cost_price = row["cost_price"].to_s.gsub(",","").to_f
 	product.count_on_hand = row["count_on_hand"]
 	product.available_on = Time.now
 	product.tax_category_id = tax_category_id
@@ -95,8 +96,8 @@ namespace :products do
 	variant.barcode = row["barcode"].force_encoding("utf-8")
       end
       variant.sku = row["sku"].force_encoding("utf-8")
-      variant.price = row["price"]
-      variant.cost_price = row["cost_price"]
+      variant.price = row["price"].to_s.gsub(",","").to_f
+      variant.cost_price = row["cost_price"].to_s.gsub(",","").to_f
       variant.count_on_hand = row["count_on_hand"]
       variant.option_values = variant_values
       p "Variant not saved" unless variant.save!
@@ -132,7 +133,8 @@ namespace :products do
       product.name = row["name"].force_encoding("utf-8")
       product.description = row["description"].force_encoding("utf-8")
       product.save!
-
+      
+      puts "Importing of product #{product.name} with sku '#{product.sku}' was finished"
     end
   end
 end
