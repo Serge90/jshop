@@ -20,24 +20,10 @@ module ApplicationHelper
     end.join("<td class=\"menu_separator\"><img src=\"/images/menu_separator.gif\" border=\"0\" alt=\"\" width=\"1\" height=\"13\"></td>").html_safe
   end
 
-
-  def footer_menu_creator
-    links = {:homepage => root_path,
-             :whats_new => news_index_path,
-             :specials => "#",
-             :contact_us => contact_index_path
-    }
-    if session['warden.user.user.key'].nil?
-      links["login"] = login_path
-    else
-      links["logout"] = {:action=>"destroy", :controller=>"/user_sessions"}
-    end
-    i = 0
+  def header_menu_creator links
     links.collect do |name,to_go|
-          "#{link_to t(name), to_go}"
-    end.join("&nbsp;&nbsp;&nbsp;
-            <img src=\"/images/menu_separator.gif\" border=\"0\" alt=\"\" width=\"1\" height=\"13\">
-            &nbsp;&nbsp;&nbsp;").html_safe
+      "<li>#{link_to t(name), to_go}</li>"
+    end.join('').html_safe
   end
   
   #loads locales for language module

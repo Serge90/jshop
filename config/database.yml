@@ -12,7 +12,7 @@ development:
   database: jshop_development
   pool: 5
   username: root
-  password: root
+  password: m5dAsuc2
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -35,5 +35,5 @@ production:
   database: jshop_development
   pool: 5
   username: root
-  password: root
+  password: m5dAsuc2
   socket: /var/run/mysqld/mysqld.sock

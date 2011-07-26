@@ -1,40 +1,9 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Taxon.roots  %>
 <%= form_tag products_url, :method => :get do %>
-	      <table border="0" cellspacing="4" cellpadding="0" align="right" id="search_table">
-		<tr>
-		  <!--<td class="td">Search:&nbsp;&nbsp;</td>-->
-		  <td class="search_input-rep">
-		    <table cellpadding="0" cellspacing="0" border="0" class="search_input-left">
-		      <tr>
-			<td class="search_input-right">
-			  <%= select_tag :taxon, 
-        options_for_select([[t(:all_departments), '']] + 
-                              @taxons.map {|t| [t.name, t.id]}, 
-                            @taxon ? @taxon.id : params[:taxon]), :class => "go" %>
-			</td>
-		      </tr>
-		    </table>
-		  </td>
-            	  <td class="search_input-rep">
-		    <table cellpadding="0" cellspacing="0" border="0" class="search_input-left">
-		      <tr>
-			<td class="search_input-right">
-			  <%= text_field_tag :keywords, params[:keywords], :class => "go" %>
-			</td>
-		      </tr>
-		    </table>
-		  </td>
-		<td><img src="/images/spacer.gif" border="0" alt="" width="7" height="1"></td>
-		<td class="search_button-rep">
-		  <table cellpadding="0" cellspacing="0" border="0" class="search_button-left">
-		    <tr>
-		      <td class="search_button-right">
-			<%= image_submit_tag "/images/buttons/button_search_prod.gif", :name => nil %>
-		      </td>
-		    </tr>
-		  </table>
-		</td>
-	      </tr>
-	    </table>
+    <%# select_tag :taxon,
+        options_for_select([[t(:all_departments), '']] +
+                              @taxons.map {|t| [t.name, t.id]},
+                            @taxon ? @taxon.id : params[:taxon]) %>
+    <%= text_field_tag :keywords, params[:keywords], :onFocus => "this.value=''", :value => t('search') %>
+    <%= image_submit_tag "icon_search.png", :name => nil, :width => '17px', :height => '17px' %>
 <% end %>
-

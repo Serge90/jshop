@@ -1,9 +1,0 @@
-<% if @product.name %>
-  <h2> <%= I18n.t('leave_us_a_review_for') + ' "' + @product.name + '"' %> </h2>
-<% else %>
-  <h2> <%= I18n.t('leave_us_a_review_for') + ' "'  + '"' %> </h2>
-<% end %>
-
-<%= render 'form', { :review => @review, :product => @product } %>
-
-<%= render :partial => "fine_print" %>

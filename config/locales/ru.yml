@@ -1,4 +1,22 @@
 ru:
+  about: О компании
+  servise: Сервис
+  delivery_and_payment: Доставка и оплата
+  order_and_payment: Заказ и оплата
+  guarantee: Гарантия
+  return_policy: Условия возврата
+  kkk: KKK
+  search: Искать
+  operators_phone: Телефон оператора
+  sign_registration: Вход | Регистрация
+  signout: Выйти
+  cart: Корзина
+  features: Характеристики
+  similar_items: Похожие товары
+  magazine: Журнал
+  club: Клуб
+  outlets: Пункты выдачи
+  we_take: Мы принимаем
   wishlist: Лист желаний
   wishlists: Списки желаний
   remove_from_wishlist: Удалить
