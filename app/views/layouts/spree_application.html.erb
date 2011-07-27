@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%= hook :inside_head do %>
+  <%= render :partial => 'shared/head'%>
+<% end %>
+</head>
+<body>
+<div id="page">
+  <div id="wrapper">
+    <%= render :partial => 'shared/header' %>
+  </div>
+
+  <div id="conteiner">
+    <div class="content">
+      <div id="ContLeft">
+        <%= yield :sidebar %>
+      </div>
+      <div id="ContRigh">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <%= render :partial => 'shared/footer' %>
+  </div>
+</div>
+
+</body>
+</html>

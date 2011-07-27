@@ -1,0 +1,60 @@
+<%
+  paginated_products = @searcher.products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h3><%= t(:search_results, :keywords => h(params[:keywords])) unless params[:keywords].blank? %></h3>
+<% end %>
+ 
+<% if products.any? %>
+<% cc=0 %>
+<% cc=2 if products.length==1 %>
+<% cc=1 if products.length==2 %>
+<table class="product">
+  <% products.each do |product| %>
+    <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+      <%= hook :products_list_item, {:product => product} do %>
+        <% if cc==0 %><tr><% end %>
+          <td>
+            <div class="item">
+              <%= link_to product_image(product, :width => 219, :height => 145), product %>
+              <div class="name">
+                <%= link_to raw(product.name), product %>
+              </div>
+              <div class="actions">
+                <%= link_to t("add_to_cart"), add_to_cart_path(:variant_id => product.master.id), :method => :put %>
+
+              </div>
+              <div class="arc">
+                Арт: 1-211
+              </div>
+              <div class="price">
+                <%= product_price(product) %>
+              </div>
+            </div>
+          </td>
+          <% if cc<2 %>
+            <td>
+              <%= image_tag 'border.jpg' %>
+            </td>
+          <% end %>
+        <% if cc==2 %></tr><% cc=0 %><% else %><% cc=cc+1 %><% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>
+<% end %>
+<% if paginated_products.respond_to?(:total_pages) %>
+<div class="page_numbers">
+
+<%
+      params.delete(:search)
+      params.delete(:taxon)
+      
+%><%= will_paginate(paginated_products,
+                    :previous_label => "&#171; #{t('previous')}",
+                    :next_label => "#{t('next')} &#187;") %>
+</div>
+<% end %>

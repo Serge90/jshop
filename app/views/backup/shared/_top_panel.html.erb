@@ -1,0 +1,17 @@
+<div id="globalActionsWrap">
+  <div class="fixedWidth" id="globalActions">
+    <strong>24/7 Customer Service (800) 927-7671</strong>
+    <span id="livechat"><a class="gae-click*Global*Header*Live-Help" href="/liveChat.zml">Live Help</a></span>
+    <ul>
+      <li id="loginLinks">
+	<%= link_to t("login"), login_path %> / <%= link_to t("logout"), {:action=>"destroy", :controller=>"/user_sessions"} %>
+      </li>
+      <li><%= link_to t("account"), account_path %></li>
+      <li><%= link_to t("wishlists"), default_wishlist_path %></li>
+      <li><%= link_to t("blog"), news_index_path %></li>
+      <li id="globalHelpLink">
+      <a class="" href="/customer-service-center">Help</a></li>
+    </ul>
+  </div>
+</div>
+<div class="clear"></div>

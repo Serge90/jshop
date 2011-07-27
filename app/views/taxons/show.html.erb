@@ -1,0 +1,23 @@
+<div class="taxon">
+<h1><%= @taxon.name %></h1>
+</div>
+
+<% content_for :sidebar do %>
+  <%= hook :taxon_sidebar_navigation do %>
+    <%= render :partial => "shared/taxonomies" %>
+    <%= render(:partial => "shared/filters") if @taxon.children.empty? %>
+  <% end %>
+<% end %>
+
+<%= hook :search_results do %><% end %>
+
+<% if @taxon.children.empty? || !params[:keywords].blank? %>
+  <%= hook :taxon_products do %>
+    <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+  <% end %>
+<% else %>
+  <%= hook :taxon_children do %>
+    <%= render :partial => "taxon", :collection => @taxon.children %>
+  <% end %>
+<% end %>
+

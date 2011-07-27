@@ -1,0 +1,15 @@
+<% if !@product.taxons.blank? %>
+<%= t('similar_items') %>
+<div id="taxon-crumbs">
+  <%= hook :product_taxons do %>
+    <ul><%#  class="box_item" %>
+        <% @product.taxons.each do |taxon| %>
+          <li>
+            <p><%= link_to taxon.name, "/t/#{taxon.permalink}" %></p>
+          </li>
+        <% end %>
+    </ul>
+  <% end %>
+
+</div>
+<% end %>

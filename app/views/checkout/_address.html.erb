@@ -1,0 +1,163 @@
+<style>
+div.inner input[type=text], div.inner select { width: 80%; }
+.hidden { display: none; }
+</style>
+<fieldset id='billing'>
+  <%= form.fields_for :bill_address do |bill_form| %>
+    <legend><%= t("billing_address")%></legend>
+    <table class="inner">
+      <tr>
+        <td><%= bill_form.label :firstname, t(:first_name) %></td>
+        <td><%= bill_form.text_field :firstname, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= bill_form.label :lastname, t(:last_name) %></td>
+        <td><%= bill_form.text_field :lastname, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= bill_form.label :address1, t(:street_address) %></td>
+        <td><%= bill_form.text_field :address1, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= bill_form.label :address2, t(:street_address_2) %></td>
+        <td><%= bill_form.text_field :address2, :class => 'textfield'%></td>
+      </tr>
+      <tr>
+        <td><%= bill_form.label :city, t(:city) %></td>
+        <td><%= bill_form.text_field :city, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <% if Spree::Config[:address_requires_state] %>
+        <tr>
+          <span id="bstate">
+            <% have_states = !@order.bill_address.country.states.empty? %>
+            <td><%= bill_form.label :state, t(:state) %></td>
+
+            <td><noscript>
+              <%= bill_form.text_field :state_name, :class => 'textfield' %>
+            </noscript>
+            <% state_elements = [
+               bill_form.collection_select(:state_id, @order.bill_address.country.states,
+                                  :id, :name,
+                                  {:include_blank => true},
+                                  {:class => have_states ? "select" : "hidden",
+                                  :disabled => !have_states}) +
+                bill_form.text_field(:state_name,
+                                  :class => !have_states ? "select" : "hidden",
+                                  :disabled => have_states)
+                ].join.gsub('"', "'").gsub("\n", "")
+            %>
+            <script type="text/javascript" language="javascript" charset="utf-8">
+            // <![CDATA[
+            document.write("<%= raw state_elements %>");
+            // ]]>
+            </script>
+          </span>
+          <span class="req">*</span></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><%= bill_form.label :zipcode, t(:zip) %></td>
+        <td><%= bill_form.text_field :zipcode, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= bill_form.label :country_id, t(:country) %></td>
+        <td><span id="bcountry"><%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'select'} %></span>
+        <span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= bill_form.label :phone, t(:phone) %></td>
+        <td><%= bill_form.text_field :phone, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+          <% if Spree::Config[:alternative_billing_phone] %>
+            <tr>
+              <td><%= bill_form.label :alternative_phone, t(:alternative_phone) %></td>
+              <td><%= bill_form.text_field :alternative_phone %></td>
+            </tr>
+          <% end %>
+    </table>
+  <% end %>
+</fieldset>
+<fieldset id='shipping'>
+  <%= form.fields_for :ship_address do |ship_form| %>
+    <legend><%= t("shipping_address")%></legend>
+    <p class="field checkbox">
+      <label for="order_use_billing" id="use_billing">
+        <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.eql?(@order.ship_address)) %> <%= t("use_billing_address") %>
+      </label>
+    </p>
+    <table class="inner">
+      <tr>
+        <td><%= ship_form.label :firstname, t(:first_name) %></td>
+        <td><%= ship_form.text_field :firstname, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= ship_form.label :lastname, t(:last_name) %></td>
+        <td><%= ship_form.text_field :lastname, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= ship_form.label :address1, t(:street_address) %></td>
+        <td><%= ship_form.text_field :address1, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= ship_form.label :address2, t(:street_address_2) %></td>
+        <td><%= ship_form.text_field :address2 %></td>
+      </tr>
+      <tr>
+        <td><%= ship_form.label :city, t(:city) %></td>
+        <td><%= ship_form.text_field :city, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <% if Spree::Config[:address_requires_state] %>
+        <tr>
+          <span id="sstate">
+            <% have_states = !@order.ship_address.country.states.empty? %>
+            <td><%= ship_form.label :state, t(:state) %></td>
+            <td><noscript>
+              <%= ship_form.text_field :state_name, :class => 'textfield' %>
+            </noscript>
+            <% state_elements = [
+                  ship_form.collection_select(:state_id, @order.bill_address.country.states,
+                                    :id, :name,
+                                    {:include_blank => true},
+                                    {:class => have_states ? "select" : "hidden",
+                                    :disabled => !have_states}) +
+                  ship_form.text_field(:state_name,
+                                    :class => !have_states ? "select" : "hidden",
+                                    :disabled => have_states)
+                ].join.gsub('"', "'").gsub("\n", "")
+            %>
+            <script type="text/javascript" language="javascript" charset="utf-8">
+            // <![CDATA[
+            document.write("<%= raw state_elements %>");
+            // ]]>
+            </script>
+          </span>
+          <span class="req">*</span></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><%= ship_form.label :zipcode, t(:zip) %></td>
+        <td><%= ship_form.text_field :zipcode, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= ship_form.label :country_id, t(:country) %></td>
+        <td><span id="scountry"><%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'select'} %></span>
+        <span class="req">*</span></td>
+      </tr>
+      <tr>
+        <td><%= ship_form.label :phone, t(:phone) %></td>
+        <td><%= ship_form.text_field :phone, :class => 'textfield' %><span class="req">*</span></td>
+      </tr>
+          <% if Spree::Config[:alternative_shipping_phone] %>
+            <tr>
+              <td><%= ship_form.label :alternative_phone, t(:alternative_phone) %></td>
+              <td><%= ship_form.text_field :alternative_phone %></td>
+            </tr>
+          <% end %>
+    </table>
+  <% end %>
+</fieldset>
+
+<hr class="space" />
+<div class="form-buttons" style="padding-top:4px;">
+  <input type="submit" class="submit_button" value="<%=t("save_and_continue") %>" />
+</div>

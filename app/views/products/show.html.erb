@@ -1,0 +1,77 @@
+<div id='box_produkt'>
+  <div id='box_left'>
+    <div class="galery">
+      <%= hook :product_images do %>
+        <div id="main-image">
+          <%= render 'image' %>
+        </div>
+        <div class="dotted_horizontal_separator"></div>
+        <div id="thumbnails">
+          <%= render 'thumbnails', :product => @product %>
+        </div>
+      <% end %>
+    </div>
+    <div class="clear"></div>
+    <%= render 'properties' %>
+  </div>
+  <div id='box_right'>
+    <h4><%= @product.name %></h4>
+    <div class="raiting">
+      <%= render :partial => 'shared/rating', :locals =>{:product => @product} %>
+      <!--<div class="art">Арт: 1-211</div>-->
+    </div>
+    <p>
+      <%= hook :product_description do %>
+        <%= product_description(@product) rescue t("product_has_no_description") %>
+      <% end %>
+    </p>
+    <div class="social_blok">
+      <%# render :partial => "shared/social_sharing" %>
+    </div>
+    <div class="preferenses">
+      <div class="pric_red">
+        <%= product_price(@product) %>
+      </div>
+      <ul>
+        <li><%= image_tag 'icon.png', :width => 24, :height => 24 %></li>
+        <li><%= image_tag 'icon.png', :width => 24, :height => 24 %></li>
+        <li><%= image_tag 'icon.png', :width => 24, :height => 24 %></li>
+      </ul>
+    </div>
+    <div class="size">
+      <%= hook :cart_form do %>
+        <%= render 'cart_form' %>
+      <% end %>
+    </div>
+  </div>
+  <div id='box_center'>
+    <%= render :partial => "taxons" %>
+    <div class="comments">
+      <div>
+        <%= image_tag 'tabs.png' %>
+      </div>
+      <form action="#" class="comm_area">
+        <p>
+          <textarea class="arena"></textarea>
+          <input type="image" alt="комментировать" src="/images/comm_bot.png">
+        </p>
+      </form>
+      <div class="clear"></div>
+      <div class="enter_comm">
+        <div class="userpic">
+          <%= image_tag 'user.jpg' %>
+        </div>
+        <div class="usercomm">
+          <%= link_to 'Konstantin Konstantinopolsky', '#' %> | 16.06.2011   17:05
+          <br>
+          <p>Окисление ненаблюдаемо. Структура почв устойчиво нагревает монолит, хотя этот факт
+            нуждается в дальнейшей тщательной экспериментальной проверке. К.К.Гедройцем было
+            показано, что почвенная толща гомогенно растворяет щелочной шурф, все дальнейшее
+            далеко выходит за рамки текущего исследования и не будет здесь рассматриваться.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+

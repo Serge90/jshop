@@ -1,0 +1,49 @@
+    <div class="line-footer"></div>
+    <div class="footer">
+      <div id="contFooter">
+        <div id="LeftFooter">
+          <ul class="footerName">
+            <li class="left">
+              <%= t('Bemileo') %>
+              <%= image_tag 'separatop_f.png' %>
+              <p><%= link_to t('about'), '#' %></p>
+              <p><%= link_to t('Пункты выдачи и приемки'), '#' %></p>
+              <p><%= link_to t('Клуб Bemileo'), '#' %></p>
+            </li>
+            <li class="center">
+              <%= t('servise') %>
+              <%= image_tag 'separatop_f.png' %>
+              <p><%= link_to t('contact_us'), "#" %></p>
+              <p><%= link_to t('delivery_and_payment'), "#" %></p>
+              <p><%= link_to t('guarantee'), "#" %></p>
+              <p><%= link_to t('return_policy'), "#" %></p>
+              <p><%= link_to t('kkk'), "#" %></p>
+            </li>
+            <li class="right">
+              <%= t('magazine') %>
+              <%= image_tag 'separatop_f2.png' %>
+              <p><%= link_to t('Education'), "#" %></p>
+              <p><%= link_to t('Trends'), "#" %></p>
+              <p><%= link_to t('Style hunter'), "#" %></p>
+              <p><%= link_to t('Looks'), "#" %></p>
+            </li>
+            <li class="plateg">
+              <%= t('we_take') %>
+              <%= image_tag 'separatop_f3.png' %>
+              <%= link_to image_tag('paypal.jpg'), '#' %>
+              <%= link_to image_tag('mastercart.jpg'), '#' %>
+            </li>
+          </ul>
+        </div>
+        <div id="RightFooter">
+          <%= render :partial => 'shared/social_groups' %>
+          <div id="facebook">
+            <%= image_tag 'win-face.jpg' %>
+          </div>
+        </div>
+      </div>
+    </div>
+<%= render 'shared/google_analytics' %>
+
+
+<%= javascript_include_tag 'ajax_cart' %>
