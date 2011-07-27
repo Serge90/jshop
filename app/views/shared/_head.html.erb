@@ -4,7 +4,7 @@
 <%= stylesheet_tags :all %>
 <%= csrf_meta_tag %>
 <%= javascript_include_tag 'jquery-1.6.2.min', 'jquery.validate.min.js', 'rails', 'application', :cache => 'jquery-core' %>
-<%= javascript_include_tag 'http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js', 'slides.min.jquery.js' %>
+<%= javascript_include_tag 'http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js', 'slides.min.jquery.js', 'hoverIntent.js', 'superfish.js' %>
 <% unless I18n.locale.to_s[0..1] == 'en' %>
   <%= javascript_include_tag ['localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
 <% end %>

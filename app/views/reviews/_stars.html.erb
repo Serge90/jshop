@@ -1,4 +1,7 @@
-<% if defined? edit_enabled 
+<% content_for :head do %>
+    <%= javascript_include_tag 'jquery.rating.js' %>
+<% end %>
+<% if defined? edit_enabled
     state = "" 
     name  = "review[rating]" 
   else  

@@ -2,27 +2,25 @@
   <div class="header-wrap">
     <ul id="nav-one" class="dropmenu">
         <li class="deactiv"><%= t('operators_phone') %>&nbsp;(800) 927-76-71</li>
-        <li><a href="#">Наши приемущества</a>
+        <li><%= link_to t('our_benefits'), "#" %>
             <ul>
-                <li><a href="#">Бесплатная подарочная упаковка</a></li>
-                <li><a href="#">Весь товар в наличии</a></li>
-                <li><a href="#">Возможность покупки в кредит</a></li>
-                <li><a href="#">Уютные пункты выдачи и примерки</a></li>
-                <li><a href="#">Постоянное обновление ассортимента</a></li>
-                <li><a href="#">Бесплатная доставка</a></li>
-                <li><a href="#">Удобная и безопасная оплата</a></li>
-                <li><a href="#">Система бонусов и скидок</a></li>
-                <li><a href="#">Гарантия возврата</a></li>
+              <% links = {
+                        :free_gift_wrapping => "#",
+                        :all_goods_in_stock => "#",
+                        :the_possibility_of_buying_on_credit => "#",
+                        :free_gift_wrap => "#",
+                        :all_goods_are_in_stock => "#",
+                        :the_possibility_of_buying_on_credit => "#",
+                        :cozy_outlets_and_fittings => "#",
+                        :constant_updating_of_range => "#",
+                        :free_shipping => "#",
+                        :convenient_and_secure_payment => "#",
+                        :the_system_of_bonuses_and_discounts => "#",
+                        :back_guarantee => "#"
+              } %>
+              <%= header_menu_creator(links) %>
             </ul>
         </li>
-
-
-
-<%# if current_user %>
-  <!--<li><%# link_to t('my_account'), account_path %></li>
-  <li><%# link_to t('logout'), destroy_user_session_path %></li>-->
-<%# else %>
-
         <% if current_user.nil? %>
             <li><%= link_to t('sign_registration'), login_path %>
                 <%= render :partial => 'shared/login' %>
@@ -30,8 +28,8 @@
         <% else %>
             <li><%= link_to t('signout'), destroy_user_session_path %></li>
         <% end %>
-        <li><a href="#">В избранное</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li><%= link_to t('to_bookmarks'), "#" %></li>
+        <li><%= link_to t('contacts'), "#" %></li>
         <li><a href="#">Помощь</a>
             <ul>
                 <li><a href="#">Возникли вопросы? Мы всегда готовы помочь вам!</a></li>
@@ -48,15 +46,15 @@
     <li><%= image_tag 'logo.png' %></li>
     <li class="indicator">
         <ul>
-            <li>Бесплатная подарочная упаковка</li>
-            <li>Весь товар в наличии</li>
-            <li>Возможность покупки в кредит</li>
+          <li><%= t('free_gift_wrapping') %></li>
+          <li><%= t('all_goods_in_stock') %></li>
+          <li><%= t('the_possibility_of_buying_on_credit') %></li>
         </ul>
     </li>
 
     <li class="basket">
         <%= render :partial => 'orders/ajax_cart', :locals => {:order => current_order(true) } %>
-        <div id="wish"><b>Желания</b><br />2 желания</div>
+        <div id="wish"><b><%= t('wishes') %></b><br /><%= link_to t("wishlists"), default_wishlist_path %></div>
     </li>
     <li class="search">
         <%= render :partial => 'shared/search' %>

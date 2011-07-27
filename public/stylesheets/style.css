@@ -30,8 +30,9 @@ ul.dropmenu {
 	font-size: 12px;
 	font-family: Tahoma;
 }
+/*
 .dropmenu li span {
-	background: /* url("/images/arrow_up.png") repeat-x scroll 0 0 */ transparent;
+	background: /* url("/images/arrow_up.png") repeat-x scroll 0 0  transparent;
 	display: block;
 	height: 10px;
 	position: absolute;
@@ -40,8 +41,9 @@ ul.dropmenu {
 	width: 10px;
 	}
 .dropmenu li a:hover span, .dropmenu li.open > a span {
-    /*background-image: url("/images/arrow_hover.png");*/
+    /*background-image: url("/images/arrow_hover.png");
 }
+*/
 .dropmenu li a, .dropmenu li div {
 	border-right: 1px solid #4A779D;
 	color: #FFFFFF;

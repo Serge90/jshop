@@ -19,7 +19,7 @@
         <% if cc==0 %><tr><% end %>
           <td>
             <div class="item">
-              <%= link_to product_image(product, :width => 219, :height => 145), product %>
+              <%= link_to small_image(product), product %>
               <div class="name">
                 <%= link_to raw(product.name), product %>
               </div>
@@ -28,6 +28,7 @@
 
               </div>
               <div class="arc">
+
                 Арт: 1-211
               </div>
               <div class="price">

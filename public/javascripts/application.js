@@ -18,5 +18,11 @@
         });
     });
 
+    $("ul.dropmenu").superfish({
+        animation: {height:'show'},   // slide-down effect without fade-in
+        delay: 1500
+    });
+   //$('.star').rating();
+
   });
 })(jQuery);
