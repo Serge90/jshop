@@ -1,3 +1,8 @@
+<% content_for :sidebar do %>
+  <%= hook :taxon_sidebar_navigation do %>
+    <%= render :partial => "shared/taxonomies" %>
+  <% end %>
+<% end %>
 <%= render "shared/error_messages", :target => @user %>
 <h2><%= t("registration")%></h2>
 <div id="registration">

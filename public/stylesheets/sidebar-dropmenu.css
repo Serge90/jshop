@@ -1,0 +1,156 @@
+.sidebar-dropmenu li a, .sidebar-dropmenu li {
+	float: left;
+	}
+	/*
+.sidebar-dropmenu li a:hover, .sidebar-dropmenu li.open > a {
+	/*background: url("/images/activ-text.jpg") repeat-x scroll 0 0 #FFFFFF;
+	color: #FFFFFF;
+}*/
+.sidebar-dropmenu li {
+	list-style: none outside none;
+	position: relative;
+	font-size: 12px;
+	font-family: Tahoma;
+}
+/*
+.sidebar-dropmenu li span {
+	background: /* url("/images/arrow_up.png") repeat-x scroll 0 0  transparent;
+	display: block;
+	height: 10px;
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	width: 10px;
+	}
+.sidebar-dropmenu li a:hover span, .sidebar-dropmenu li.open > a span {
+    /*background-image: url("/images/arrow_hover.png");
+}
+*/
+.sidebar-dropmenu li a, .sidebar-dropmenu li div {
+	padding: 7px 20px 8px 20px;
+	text-decoration: none;
+	
+}
+.sidebar-dropmenu li > ul, .sidebar-dropmenu li > div {
+	display: none;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	background-color: #f9f8f5;
+	z-index: 500000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border:1px solid #b0aca5;
+}
+.sidebar-dropmenu li:hover > ul, .sidebar-dropmenu li:hover > div {
+    display: block;
+}
+.sidebar-dropmenu li ul li, .sidebar-dropmenu li ul li a {
+	color: #5d6569;
+	float: none;
+	text-decoration: none;
+	text-transform: none;
+	position: relative;
+	z-index: 1000000;
+	
+}
+.sidebar-dropmenu li ul li {
+	
+}
+.sidebar-dropmenu li > div {
+    width: 200px;
+}
+.sidebar-dropmenu li ul li a span {
+   /* background: url("/images/arrow_sub.gif") repeat-x scroll 0 0 transparent;*/
+}
+.sidebar-dropmenu li ul li a {
+	display: block;
+}
+.sidebar-dropmenu li ul li a:hover {
+	background: none repeat scroll 0 0 #f9f8f5;
+	color: #F67A00;
+}
+.sidebar-dropmenu li ul li ul, .sidebar-dropmenu li ul li > div {
+    left: 101%;
+    top: 0;
+}
+.sidebar-dropmenu li > div.login {
+	border: 1px solid #FFFFFF;
+	width: 220px;
+}
+.sidebar-dropmenu li > div.login div {
+    border: medium none;
+}
+.sidebar-dropmenu li > div.products {
+    width: 285px;
+}
+.sidebar-dropmenu li:hover > div.products ul {
+    display: block;
+}
+.sidebar-dropmenu li > div.products * {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.sidebar-dropmenu li > div.products li {
+    border-bottom: 1px solid #CCCCCC;
+    overflow: hidden;
+    padding: 10px 0;
+}
+.sidebar-dropmenu li > div.products li img {
+    float: left;
+    margin: 0 15px;
+}
+.sidebar-dropmenu li > div.products {
+    border: 1px solid #CCCCCC;
+    color: #595959;
+}
+.sidebar-dropmenu li > div.products ul li h2 {
+    font-size: 16px;
+    margin: 0;
+    padding: 2px 0 3px;
+}
+.sidebar-dropmenu li > div.products ul li p {
+    color: #666666;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-dropmenu li > div.products ul li p a {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #666666;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+}
+.sidebar-dropmenu li > div.products ul li p a:hover {
+    color: #222222;
+    text-decoration: none !important;
+}
+.sidebar-dropmenu li > div.products .small {
+    color: #595959;
+    font-size: 9px;
+    padding: 15px;
+    text-transform: none;
+}
+.sidebar-dropmenu li > div.tutorials * {
+    display: none;
+}
+.sidebar-dropmenu .first-level{
+    height: 29px;
+    background: url("/images/basic-menu.jpg") repeat-x scroll 0 0 transparent;
+}
+.sidebar-dropmenu .first-level-link{
+    color: #FFFFFF;
+    text-decoration: none;
+    width: 170px;
+}
+.sidebar-dropmenu .first-level-active{
+    background: url("/images/activ-text.jpg") repeat-x scroll 0 0 transparent;
+}
+

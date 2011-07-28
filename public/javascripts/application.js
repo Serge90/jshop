@@ -20,7 +20,21 @@
 
     $("ul.dropmenu").superfish({
         animation: {height:'show'},   // slide-down effect without fade-in
-        delay: 1500
+        delay: 1500,
+        dropShadows: false
+    });
+
+    $("ul.sidebar-dropmenu").superfish({
+        animation: {height:'show'},   // slide-down effect without fade-in
+        delay: 1500,
+        dropShadows: false
+    });
+
+    $(".first-level").mouseover(function(){
+        $(this).addClass('first-level-active');
+    });
+    $(".first-level").mouseout(function(){
+        $(this).removeClass('first-level-active');
     });
    //$('.star').rating();
 

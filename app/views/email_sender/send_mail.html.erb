@@ -1,3 +1,9 @@
+<% content_for :sidebar do %>
+  <%= hook :taxon_sidebar_navigation do %>
+    <%= render :partial => "shared/taxonomies" %>
+  <% end %>
+<% end %>
+<div id="standart_right_box">
 <h1><%= t('email_to_friend.tell_about', :product => @object.name) %></h1>
 
 <%= form_for(@mail_to_friend, :url => "") do |f| -%>
@@ -31,3 +37,4 @@
     <%= f.submit(t('email_to_friend.send_message'), :class=>'submit_button') %>
   </p>
 <% end -%>
+</div>

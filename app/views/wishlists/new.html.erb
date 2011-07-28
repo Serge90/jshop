@@ -1,3 +1,8 @@
+<% content_for :sidebar do %>
+  <%= hook :taxon_sidebar_navigation do %>
+    <%= render :partial => "shared/taxonomies" %>
+  <% end %>
+<% end %>
 <h1><%= t("creating_wishlist") %></h1>
 <% form_for @wishlist do |f| %>
   <p><%= f.label :name, t(:name) %>:&nbsp;<%= f.text_field :name %></p>

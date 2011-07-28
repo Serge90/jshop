@@ -1,8 +1,10 @@
-<ul>
+<% if taxonomy.children.any? %>
+<ul class="child-menu">
   <% taxonomy.children.each do |taxon| %>
-    <li class="bg_list">
+    <li>
       <%= link_to taxon.name, seo_url(taxon) %>
       <%= render :partial => 'shared/taxonomy', :object=> taxon %>
     </li>
   <% end %>
 </ul>
+<% end %>

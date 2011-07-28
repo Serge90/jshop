@@ -1,3 +1,8 @@
+<% content_for :sidebar do %>
+  <%= hook :taxon_sidebar_navigation do %>
+    <%= render :partial => "shared/taxonomies" %>
+  <% end %>
+<% end %>
 <div id="box_produkt">
 <%= stylesheet_link_tag 'wishlist' %>
 <div id='wishlist_header'>

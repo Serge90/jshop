@@ -205,3 +205,6 @@ ul.dropmenu {
 .total{
     margin: 0;
 }
+.child-menu .sf-sub-indicator{
+    background-color: #666666;
+}

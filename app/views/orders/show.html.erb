@@ -1,3 +1,8 @@
+<% content_for :sidebar do %>
+  <%= hook :taxon_sidebar_navigation do %>
+    <%= render :partial => "shared/taxonomies" %>
+  <% end %>
+<% end %>
 <div id="order">
   <%= link_to t('back_to_store'), products_path, :class=>'standart_link' %> 
 
