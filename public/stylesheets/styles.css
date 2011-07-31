@@ -765,8 +765,16 @@ p {
 .enter_comm .usercomm {
 	float: left;
 	width: 595px;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #efece7;
 }
-
+.usercomm .email{
+    font-size: 12px;
+	text-decoration: underline;
+	color: #5d6569;
+	font-weight: bold;
+}
 
 
 .enter_comm .userpic {

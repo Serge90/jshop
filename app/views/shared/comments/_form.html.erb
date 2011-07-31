@@ -1,0 +1,11 @@
+<%= form_for review, :url => create_review_product_path(product), :html => {:method => :post} do |f| %>
+  <%= render "shared/error_messages", :target => review %>
+
+  <p class="review_review_field">
+    <%= f.text_area :review, :wrap => "virtual", :rows => "10", :class => "arena" %>
+  </p>
+
+  <p class="review_submit">
+    <%= f.submit I18n.t('submit_your_review'), :class => "button bg_darkfirst" %>
+  </p>
+<% end %>

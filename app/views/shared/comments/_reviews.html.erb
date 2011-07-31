@@ -1,0 +1,13 @@
+<% @reviews.each do |review| %>
+  <div class="enter_comm">
+    <div class="usercomm">
+      <span class="email" ><%= review.user.email if user_signed_in? %></span> |
+      <%= l review.created_at, :format => :long %>
+      <br />
+      <p>
+        <%= review.review %>
+      </p>
+    </div>
+  </div>
+  <br />
+<% end %>

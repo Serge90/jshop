@@ -55,6 +55,14 @@ Jshop::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  
-  match '/products', :controller=>'products', :action=>'index'
+  resources :products do
+    member do
+      get :rate
+      post :rate
+      post :create_review
+    end
+  end
+
+  #match '/products', :controller=>'products', :action=>'index'
+  match '/product/:id/rate/:stars' => "products#rate"
 end

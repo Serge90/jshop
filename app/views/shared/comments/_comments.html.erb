@@ -1,0 +1,25 @@
+<div id="tabs">
+	<ul>
+		<li><%= link_to t('bemileo_comments'), "#tabs-1" %></li>
+		<li><%= link_to t('vkontakte'), "#tabs-2" %></li>
+		<li><%= link_to t('facebook'), "#tabs-3" %></li>
+        <li><%= link_to t('twitter'), "#tabs-4" %></li>
+	</ul>
+	<div id="tabs-1" class="tab-area">
+      <% if user_signed_in? %>
+        <%= render :partial => 'shared/comments/form', :locals=>{:product => @product, :review => @review}  %>
+      <% end %>
+      <div class="comments">
+        <%= render :partial => 'shared/comments/reviews' %>
+      </div>
+	</div>
+	<div id="tabs-2" class="tab-area">
+      <%= render :partial => 'shared/comments/vkontakte' %>
+	</div>
+	<div id="tabs-3" class="tab-area">
+      <%= render :partial => 'shared/comments/facebook' %>
+	</div>
+    <div id="tabs-4" class="tab-area">
+      <%= render :partial => 'shared/comments/twitter' %>
+    </div>
+</div>

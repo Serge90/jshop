@@ -36,6 +36,8 @@
     $(".first-level").mouseout(function(){
         $(this).removeClass('first-level-active');
     });
+
+    $( "#tabs" ).tabs();
    //$('.star').rating();
 
   });

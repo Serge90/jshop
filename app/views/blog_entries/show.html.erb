@@ -1,0 +1,13 @@
+<% content_for :sidebar do %>
+  <div id="blog-sidebar">
+    <%= render :partial => 'news_archive', :object => @news_archive %>
+  </div>
+<% end %>
+<div id='standart_right_box'>
+  <ul id="blog-entries">
+    <li class="blog_entry">
+      <%= render :partial => 'blog', :locals => {:e => @blog_entry} %>
+    </li>
+  </ul>
+  <br class="clearfloat" />
+</div>

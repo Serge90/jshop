@@ -177,3 +177,14 @@ select {
     padding: 0;
     margin: 0;
 }
+.tab_button_leftside{
+    background-image: url(/images/tab_button_leftside.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.arena{
+    width: 670px;
+}
+.left{
+    float: left;
+}
