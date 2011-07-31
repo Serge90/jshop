@@ -25,7 +25,7 @@ gem 'spree_simple_product_translations', :git => 'git://github.com/jeroenj/spree
 gem 'spree_store_credits', :git => 'git://github.com/kritik/spree_store_credits.git' #,:path => '../spree_store_credits'#
 gem 'spree_robokassa', :git => 'git://github.com/romul/spree_robokassa.git'
   #gem "spree_address_book", :git => "git://github.com/romul/spree_address_book.git"
-gem 'spree_reviews', :path => "../spree-reviews" #:git => "git://github.com/romul/spree-reviews.git"
+gem 'spree_reviews', :git => "git://github.com/Serge90/spree-reviews.git"
 gem 'spree_contact_us', :git => 'git://github.com/kritik/spree-contact-us.git'#, :path => '../spree-contact-us'#
 gem 'spree_solr_search', :git => "git://github.com/kritik/spree-solr-search.git"#, :path => '../spree-solr-search'#
   #gem 'import_products', :git => 'git://github.com/joshmcarthur/spree-import-products.git'
