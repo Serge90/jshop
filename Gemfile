@@ -8,6 +8,8 @@ gem 'rails', '3.0.7'
 gem 'spree_ajax_cart', :git => 'git://github.com/kritik/spree_ajax_cart'
 # gem "spree_locales_dropdown", :require => "spree_locales_dropdown", :git => 'git://github.com/greendog/spree_locales_dropdown.git'
 gem 'mysql2','< 0.3'
+gem 'dynamic_form'
+
 gem 'spree', '0.60'#, :git => 'git://github.com/spree/spree.git'
 #gem 'deface', :git => 'git://github.com/railsdog/deface.git'
 gem "spree_static_content"
