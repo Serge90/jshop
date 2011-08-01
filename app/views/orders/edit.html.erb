@@ -4,7 +4,7 @@
   <% end %>
 <% end %>
 <div id='standart_right_box'>
-<h1><%= t("shopping_cart")%></h1>
+<h1><%= t("shopping_cart")%><% if not @order.line_items.empty? %>&nbsp;(<%= @order.line_items.length %>)&nbsp;<% end %></h1>
 
 <% if @order.line_items.empty? %>
 

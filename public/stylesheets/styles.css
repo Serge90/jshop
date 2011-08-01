@@ -588,12 +588,13 @@ p {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	text-decoration: underline;
-	height: 30px;
+	/*height: 30px;*/
 	margin-top: 15px;
 	
 }
 .item .actions{
     font-size: 10px;
+    margin-top: 7px;
 }
 .item .price {
 	font-family: Georgia, "Times New Roman", Times, serif;

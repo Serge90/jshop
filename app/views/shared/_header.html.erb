@@ -28,7 +28,9 @@
         <% else %>
             <li><%= link_to t('signout'), destroy_user_session_path %></li>
         <% end %>
-        <li><%= link_to t('to_bookmarks'), root_path, :rel => 'bookmark' %></li>
+        <li>
+		<%= link_to t('to_bookmarks'), "javascript:bookmark_us('http://bemileo.ru','Bemileo shop')" %>
+	</li>
         <li><%= link_to t('contacts'), "#" %></li>
         <li><a href="#">Помощь</a>
             <ul>
