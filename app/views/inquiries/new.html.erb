@@ -1,0 +1,63 @@
+<% content_for :sidebar do %>
+  <%= hook :homepage_sidebar_navigation do %>
+    <% if "products" == @current_controller && @taxon %>
+      <%= render "shared/filters" %>
+    <% else %>
+      <%= render "shared/taxonomies" %>
+    <% end %>
+  <% end %>
+<% end %>
+<h1><%= t('contact_us') %></h1>
+
+<div id="standart_right_box">
+
+	<% form_for(:inquiry) do |f| %>
+    <fieldset>
+        <legend><%= t('Fill_out_the_fields_to_contact_us') %></legend>
+        <% unless @inquiry && !@inquiry.errors.count.zero? %>
+            <%= render :partial => 'shared/contact_info' %>
+        <% else %>
+            <div class="errors">
+                <%= error_messages_for :inquiry %>
+            </div>
+        <% end %>
+
+	<table class="inner">
+        <tr>
+          <td><%= f.label :name, t('name') %></td>
+          <td><%= f.text_field :name, :class => 'required' %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :email, t('email') %></td>
+          <td><%= f.text_field :email, :class => 'required email' %></td>
+        </tr>
+        <% if Spree::Config[:contact_us_ask_for_order_number] %>
+            <tr>
+              <td><%= f.label :order_no, t(:order_number) %></td>
+              <td><%= f.text_field :order_no %></td>
+            </tr>
+        <% end %>
+        <% if Spree::Config[:contact_us_ask_for_phone] %>
+            <tr>
+              <td><%= f.label :phone, t('phone') %></td>
+              <td><%= f.text_field :name, :class => 'phone' %></td>
+            </tr>
+        <% end %>
+        <% unless Spree::Config[:contact_us_inquiry_types].blank? %>
+            <tr>
+              <td><%= f.label :inquiry_type, t(:question_type) %></td>
+              <td><%= f.select :inquiry_type, Spree::Config[:contact_us_inquiry_types].split(',') %></td>
+            </tr>
+        <% end %>
+        <tr>
+          <td><%= f.label :message, t('message') %></td>
+          <td><%= f.text_area :message, :class => 'required' %></td>
+        </tr>
+        </div>
+	</table>
+    </fieldset>
+    <div class="form-buttons">
+        <%= submit_tag t('send_inquiry'), :class => 'send button primary' %>
+    </div>
+	<% end %>
+</div>
