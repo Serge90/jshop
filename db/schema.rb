@@ -614,6 +614,7 @@ ActiveRecord::Schema.define(:version => 20110728143401) do
     t.boolean  "approved",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "roles", :force => true do |t|
