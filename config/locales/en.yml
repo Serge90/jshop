@@ -99,6 +99,8 @@ en:
   shop_by_taxonomy: Shop by %{taxonomy}
   shipping_instructions: Shipping Instructions
   place_order: Place Order
+  index:
+    sku: Sku
 
   number:
     currency:
